@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AIM 3 PREVIEW -- Yale (Pfaller) contributions to the Research Strategy
+%
+% Renders the Yale-authored fragments (Innovation subsection, Aim 3
+% preliminary-results figure) with the shared project preamble, so they
+% appear exactly as they will in grant_application.tex on Overleaf.
+% Preview only, not a submission document. \input new Yale fragments
+% here as they are drafted.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{preamble}
+
+\begin{document}
+
+\note{PREVIEW -- Yale (Pfaller) contributions, rendered with the shared Overleaf preamble.}
+
+% match the counter state of the Innovation subsection in grant_application.tex
+\setcounter{section}{1}
+\setcounter{subsection}{1}
+
+\subsection{Innovation}
+
+\input{innovation_gr}
+
+\begin{figure}[b!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/aim3_figure.pdf}
+    \caption{\textbf{Preliminary results: cardiac \gls*{gr} as a mechanobiological feedback loop.}
+    (a)~Constituent-level feedback: deviations of the mechanical state from a homeostatic set-point drive myocyte and collagen turnover, which adapts geometry and mass and feeds back on the load.
+    (b)~From a single set of equations, the model predicts both stable growth that returns to homeostasis and maladaptive, runaway dilation.
+    (c)~Time courses of myocyte stress, wall thickness, chamber size, and collagen for both outcomes.
+    \note{[draft caption -- edit before moving into grant\_application.tex]}}
+    \label{fig:aim3prelim}
+\end{figure}
+
+\bibliographystyle{mrp}
+\bibliography{references,martin_highlighted}
+
+\end{document}

@@ -1,0 +1,65 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# claude
+.claude/
+
+# Backup / editor files
+*~
+*.bak
+*.backup
+*.swp
+*.swo
+*.tmp
+.*.swp
+.*.swo
+\#*\#
+.vscode/
+.idea/
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.dvi
+*.synctex*
+*.fdb_latexmk
+*.fls
+*.ist
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+
+# Index / nomenclature files
+*.idx
+*.ilg
+*.ind
+*.nlo
+*.nls
+
+# LaTeX-generated PDFs (but keep figure PDFs -- those are source, not build output)
+*.pdf
+!figures/**
+
+# Figures compiled from svg
+*.pdf_tex
+
+# Python
+__pycache__/
+*.py[cod]
+
+# LaTeX aux files inside figures/ (from building figures/aim3)
+figures/**/*.aux
+figures/**/*.log
+
+# intermediate build copy (canonical copy is figures/aim3_figure.pdf)
+figures/aim3/aim3_figure.pdf

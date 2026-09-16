@@ -1,0 +1,138 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ====================================================================
+%       DOCUMENT CLASS
+% ====================================================================
+\documentclass[11pt,english]{article}
+
+
+% ====================================================================
+%       START PACKAGES, NEW PARAMETERS, AND NEW COMMANDS
+% ====================================================================
+\makeatletter
+
+% use helvetica as default sans-serif font
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% standard font encoding
+\usepackage[T1]{fontenc}
+
+% geometry (margins, etc.)
+\usepackage[letterpaper]{geometry}
+\geometry{verbose, tmargin=0.5in, bmargin=0.5in, lmargin=0.5in, rmargin=0.5in, headheight=0cm, headsep=0cm, footskip=0cm}
+\marginparwidth=0pt
+\marginparsep=0pt
+\pagestyle{empty}
+\setcounter{secnumdepth}{4}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+% replace underlining in unsrt biblio by emphasis (italic)
+\PassOptionsToPackage{normalem}{ulem}
+
+% a bunch of packages
+\usepackage{color}
+\usepackage{array}
+\usepackage{float}
+\usepackage{units}
+\usepackage{amsbsy}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{babel}
+\usepackage{textgreek}  % greek letters in the text, no need to use equations
+\usepackage{breakcites}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{sidecap}
+\usepackage{booktabs}
+\usepackage{lipsum} % for dummy "lorem ipsum" text
+\usepackage[acronym,shortcuts]{glossaries}
+\usepackage{subfigure}
+
+
+% references (use bib file)
+\usepackage[superscript]{cite}
+\renewcommand{\citeform}[1]{\textbf{#1}}
+\renewcommand\@biblabel[1]{[\textbf{#1}] }
+
+% captions
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{dot}{. }
+\captionsetup{labelfont={bf}, font=scriptsize, labelsep=dot}
+\useshortskip
+\setlength{\floatsep}{0pt}
+\setlength{\textfloatsep}{5pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{0pt}
+
+% compact titles
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{-1pt}{-1pt}
+\titlespacing{\subsection}{0pt}{-1pt}{-1pt}
+\titlespacing{\subsubsection}{0pt}{-1pt}{-1pt}
+
+% lists
+\usepackage{enumitem}
+\setlist{parskip=0pt}
+\setlist{leftmargin=*,parsep=1pt,itemsep=2pt,topsep=2pt,partopsep=0pt}
+\renewcommand{\labelenumi}{\bfseries\arabic{enumi}.}
+\renewcommand{\labelenumii}{\bfseries\alph{enumii}.}
+
+% algorithms
+\usepackage{algpseudocode}
+\usepackage[plain]{algorithm}  % [options] are [plain], [boxed], [ruled]
+\captionsetup[algorithm]{labelfont={bf}, font=scriptsize, labelsep=dot}
+\floatstyle{plaintop}
+\restylefloat{algorithm}
+
+% colors
+\usepackage[svgnames,table]{xcolor}
+\definecolor{newgray}{rgb}{0.3882,0.4,0.4157}
+
+% more colors
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.90}
+\definecolor{darkgray}{gray}{0.40}
+
+% new list type (from Lyx)
+\newenvironment{lyxlist}[1]
+    {\begin{list}{}
+        {\settowidth{\labelwidth}{#1}
+         \setlength{\leftmargin}{\labelwidth}
+         \addtolength{\leftmargin}{\labelsep}
+         \renewcommand{\makelabel}[1]{##1\hfil}}}
+    {\end{list}}
+
+% arrays setup (for \hline in tables) 
+\arrayrulecolor{newgray}
+\setlength{\arrayrulewidth}{0.30mm}
+
+% stretch tables row size
+\renewcommand{\arraystretch}{1.5}  
+
+\makeatother
+% ====================================================================
+%       END PACKAGES, NEW PARAMETERS, AND NEW COMMANDS
+% ====================================================================
+
+% ====================================================================
+%       INPUT LATEX FILES
+% ====================================================================
+\input{abbreviations}
+\input{abbreviations_martin}
+
+\newcommand{\comment}[1]{}
+\newcommand{\bfit}[1]{\textbf{\textit{#1}}}
+\newcommand{\ulit}[1]{\ul{\textit{#1}}}
+\newcommand{\bfulit}[1]{\textbf{\ul{\textit{#1}}}}
+\newcommand{\note}[1]{\textbf{\textcolor{red}{#1}}}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}

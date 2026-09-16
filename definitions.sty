@@ -1,0 +1,124 @@
+\ProvidesPackage{definitions}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage[nopatch=footnote]{microtype}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper]{geometry}
+\usepackage{graphicx}
+\usepackage[document]{ragged2e}
+\usepackage[acronym,shortcuts]{glossaries}
+\usepackage[superscript,biblabel,nospace]{cite}
+\usepackage{scrextend}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{lineno}
+\usepackage{float}
+\usepackage{pgfgantt}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{subcaption}
+
+\graphicspath{{figures/}{images/}}
+
+\input{abbreviations}
+\input{abbreviations_martin}
+
+\geometry{verbose, tmargin=0.5in, bmargin=0.5in, lmargin=0.5in, rmargin=0.5in, headheight=0cm, headsep=0cm, footskip=0cm}
+
+\marginparwidth=0pt
+\marginparsep=0pt
+\pagestyle{empty}
+\setcounter{secnumdepth}{4}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\emergencystretch=1em
+
+\newcommand{\comment}[1]{}
+\newcommand{\bfit}[1]{\textbf{\textit{#1}}}
+\newcommand{\ulit}[1]{\ul{\textit{#1}}}
+\newcommand{\bfulit}[1]{\textbf{\ul{\textit{#1}}}}
+\newcommand{\note}[1]{\textbf{\textcolor{red}{#1}}}
+
+\newcommand{\aim}[3]{
+\textbf{Aim #1: #2}\\
+\begin{addmargin}[1em]{0em}
+#3
+\end{addmargin}
+}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+% bold first acronym
+\renewcommand*{\genacrfullformat}[2]{%
+  \glsentrylong{#1}#2\space(\textbf{\glsentryshort{#1}})}
+\renewcommand*{\Genacrfullformat}[2]{%
+  \Glsentrylong{#1}#2\space(\textbf{\glsentryshort{#1}})}
+\renewcommand*{\genplacrfullformat}[2]{%
+  \glsentrylongpl{#1}#2\space(\textbf{\glsentryshortpl{#1}})}
+\renewcommand*{\Genplacrfullformat}[2]{%
+  \Glsentrylongpl{#1}#2\space(\textbf{\glsentryshortpl{#1}})}
+
+% adjust enumitem spacing
+\setlist{itemsep=2pt, topsep=2pt, parsep=0pt}
+
+% Adjust spacing within the bibliography environment
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\thebibliography}
+  {\settowidth}
+  {\setlength{\itemsep}{3pt} % Adjust space between items
+   \setlength{\parsep}{0pt}  % Adjust space between paragraphs
+   \setlength{\leftmargin}{0pt} % Optional: adjust margins
+   \settowidth}
+  {}{}
+\makeatother
+
+% Keep normal numbers in reference list
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+\usepackage{xstring}
+
+\newcommand{\boldname}[1]{%
+    \IfSubStr{#1}{Pfaller}{\textbf{#1}}{#1}%
+}
+
+% Adjust the space between figure and caption
+\captionsetup{skip=3pt} 
+\DeclareCaptionLabelFormat{figlab}{Fig.~#2}
+% \captionsetup[figure]{labelformat=figlab, font=footnotesize, labelfont=bf, labelsep=period}
+\captionsetup{labelformat=figlab, font=footnotesize, labelfont=bf, labelsep=period}
+
+% boxed figure
+%   #1 placement (l|r)   #2 width (e.g. 0.48\linewidth)
+%   #3 graphics          #4 caption body (start with \footnotesize\textbf{Fig.~N.})
+%   #5 label
+\newcommand{\boxedwrapfig}[5]{%
+  \setlength{\columnsep}{0pt}% <-- BEFORE \begin{wrapfigure}
+  \begin{wrapfigure}{#1}{#2}%
+    \vspace{-0.8em}%
+    \setlength{\fboxsep}{1pt}%
+    \centering%
+    \fbox{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}%
+      \centering%
+      #3%
+      \caption{#4}%
+      \label{#5}%
+    \end{minipage}}%
+    \vspace{-1em}%
+  \end{wrapfigure}%
+}
