@@ -1,0 +1,61 @@
+\input{preamble}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SPECIFIC AIMS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\textbf{\textsc{Digital Twins to Guide Biventricular Repair in Single-Ventricle Heart Disease}} 
+\textcolor{red}{\it \scriptsize Draft: \today}
+}
+
+\textbf{SPECIFIC AIMS} -- Patients born with a borderline-size ventricle historically undergo a single-ventricle palliation (Fontan circulation). 
+%, as their ventricle would be considered too small to sustain the circulation. 
+%The Fontan circulation is associated with various long-term risks. %(including multi-organ failure). 
+Nowadays, leading clinical centers have been developing a complex biventricular (BiV) repair program: in some patients the small ventricle can substantially grow, after surgically redirecting more blood into this ventricle (the so-called ventricular recruitment (VR)). In some patients their heart with borderline-size ventricle can be effective when  the two ventricles are fully septated  and the systemic and pulmonary circulations separated (BiV repair). 
+The long-term multi-organ complications related to the Fontan circulation, could be avoided by the BiV repair. However, the risks associated with these complex procedures need to be assessed. Namely, for the BiV repair, it is the failure of the ventricle to sustain the circulation; % in short-term; and 
+for VR, the risk is in an insufficient growth in next 6-15 months, leading to eventual re-entering the standard single-ventricle palliation track.
+%(with non-negligible risks after complex VR surgery). 
+
+The decision about the optimal clinical management -- single-ventricle track; BiV repair either in one stage or preceded by VR -- is currently based mainly on using some heuristic criteria, e.g., end-diastolic volume or pressure of the borderline-size ventricle, with a limited weight on functional indicators. 
+In this project, we will synthesize the multi-modality data -- cardiac magnetic resonance imaging (MRI) and pressure catheter (“invasive cardiac magnetic resonance”, iCMR) -- acquired prior to the surgery, within a personalized biomechanical modeling framework, and create the so-called Digital Twins (DTs). Such a model-augmented assessment will provide a comprehensive analysis of the cardiovascular physiology prior to surgery. Subsequently, the surgical procedure (VR or BiV repair) will be performed {\it in silico} using the DTs. The capability of short-term biomechanical models to predict the re-adjustment of cardiovascular physiology after BiV repair, and of long-term \gls*{gr} models to predict the outcome of VR, will be confronted with the outcomes of actual surgery. The \textbf{central hypothesis} is that the Digital Twins will provide a better prediction of post-surgery risk, specifically the risk of the BiV circulation and of a non-sufficient growth after VR. 
+
+%Study findings are intended to improve the selection of patients with single-ventricle heart disease (SVHD) for the BiV conversion 
+%(in a single-stage or preceded by VR) 
+%and the right timing of the procedures. 
+The overarching goal of the study is to 
+improve the selection of patients with single-ventricle heart disease %(SVHD) 
+for complex BiV repair, and therefore
+%BiV conversion is to 
+to reduce the number of patients %with SVHD 
+requiring the Fontan palliation. 
+%The study brings together investigative teams of clinical (cardiothoracic surgery; pediatric cardiology and radiology) and biomechanical research (patient-specific modeling and advanced multi-modality data analysis), with a 
+The primary site for this study is the clinical environment of the Heart Center (Children's Health, UT Southwestern Medical Center Dallas). DTs will be created from all patients included in our complex BiV repair program (\textasciitilde{}50 cases / year) both with borderline- left and right ventricles. 
+%The modeling outcomes (DT-augmented physiology assessment prior to the surgery and {\it in silico} predicted post-surgery risks) will be confronted with the actual clinical outcomes. 
+The study is observational; the predictions by DTs -- even those created prior to actual surgery in later stage of study --  will not change the clinical strategy. %The DTs created prior to the surgery in later stages of the study and 
+The  results will serve as a proof-of-concept allowing, subsequently, for designing a multi-center clinical study. From a global viewpoint, the project will pave the way for DTs assisting in optimal clinical management %for this specific patient group 
+and a paradigm shift in various medical specialties.
+%We hypothesize that the proposed approach will provide a better selection criteria than usual metrics characterizing global function of the heart obtained from clinical data.
+
+%Approach:  Cardiovascular physiology of individual patients will be assessed by advanced analysis of the iCMR data, augmented by patient-specific modeling (DTs). The DTs will be then used to analyze possible outcomes of surgery {\it in silico} to assess the post-surgery risks of heart failure (short-term) and insufficient growth of the ventricle (long-term).  DTs will be created from all patients included in the complex BiV repair program in the Heart Center, Children's Health, UT Southwestern Medical Center Dallas (around 50 cases / year) both with borderline left and borderline right ventricle. The modeling outcomes (DT-augmented physiology assessment prior to the surgery and {\it in silico} predicted post-surgery risks) will be confronted with the actual clinical outcomes. This study is observational; the model predictions will not change the clinical strategy.
+
+%the iCMR data of 40 patients with double-outlet right ventricle (DORV) acquired prior to their BiV repair. The Digital Twins will be subsequently used for an in silico BiV conversion. 
+
+{\bf Aim 1:} The comprehensive cardiovascular physiology prior to complex surgery will be assessed using  the multi-modality  iCMR data. 
+%We will develop a method that will synthesize the MRI and pressure ``on-the-fly'' during the exam and implement directly in the iCMR suite. 
+The ventricular pressure, volume and outflow data will provide A) the end-diastolic volume and pressure EDV, EDP (standard clinical metrics); B) ventricular internal and external work; ventricular and arterial elastance (surrogates of myocardial contractility and circulation resistance); and C) level of myocardial tissue stiffness and contractility of the ventricle estimated using the DT created on-the-fly during the iCMR exam. We hypothesize that the functional parameters obtained by DTs will better correlate with the successful BiV repair than the direct analysis of clinical data (EDP, EDV), as being related to the myocardial health and resilience.  
+
+
+{\bf Aim 2:} DTs of patients undergoing BiV repair created in Aim 1 will be modified according to the planned surgery. The borderline-size ventricle will be connected to the systemic / pulmonary circulation, in the patients with borderline-size left, right ventricle, respectively. We will assume that the flow rate in systemic / pulmonary circulation is unchanged after the repair and that the morphology of the borderline-size ventricle is modified according to the septated ventricle. %While the passive myocardial stiffness will be assumed to be unchanged from pre-BiV stage, 
+The contractility (inotropy level), heart rate, ventricular preload (represented by LV EDP) and level of the atrio-ventricular valve insufficiency, will be varied in silico. The predicted non-favorable outcome of the BiV conversion will be defined by predicted heart rate higher than the normal range (for patient’s age); ventricular preload above 15 mmHg or need of ventricle contractility above the level prior to BiV conversion. 
+
+{\bf Aim 3:} The recruitment grows a borderline ventricle by redirecting flow through it. However, it is unpredictable which ventricles achieve enough \gls*{gr}; a failed attempt returns the child to the single-ventricle track after added surgical risk. This \gls*{gr} is load-driven over months that a single snapshot cannot forecast. A constrained mixture model represents the constituent deposition and degradation driving chamber adaptation. We will apply our constrained mixture model of cardiac \gls*{gr},\cite{gebauer23,gebauer24} initialized from the pre-VR DT and driven by the post-recruitment loading. Geometry, loading, and baseline wall stress will be patient-specific from iCMR, turnover and gain parameters will use our established priors. In the recruitment subset, we will test how well predicted \gls*{gr} over 8--15 months matches the post-VR exam and which ventricles reach a size adequate for BiV repair.
+
+
+%While our specific problem is related to the patient born with a borderline-size ventricle, it is expected that Digital Twins assisting in optimal clinical management will represent a paradigm shift in various medical specialties. 
+
+\clearpage
+\section*{\normalsize{REFERENCES CITED \textnormal{(\textbf{PIs}, \underline{Collaborators})}}}
+\bibliographystyle{mrp}
+\bibliography{references,martin_highlighted}
+\end{document}

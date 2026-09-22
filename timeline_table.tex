@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROJECT TIMELINE -- aims and activities by year
+%
+% LaTeX remake of the project-timeline figure (aims x years, activities
+% marked per year). \input this fragment in the Research Strategy where
+% the timeline figure sits; needs tabularx and multirow (both loaded by
+% preamble.tex and definitions.sty).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\tiny
+% \renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X| *{5}{>{\centering\arraybackslash}p{0.072\textwidth}|}}
+\hline
+& & \textbf{Year 1} & \textbf{Year 2} & \textbf{Year 3} & \textbf{Year 4} & \textbf{Year 5} \\
+\hline
+\multirow{4}{*}{\shortstack[l]{\textbf{Aim 1}\\ DT-augmented\\ iCMR}}
+& Prototyping for DORVs & \textbf{X} & \textbf{X} & & & \\
+\cline{2-7}
+& Prototyping for other BiV candidates & & & \textbf{X} & & \\
+\cline{2-7}
+& DT-augmented iCMR platform (development) & \textbf{X} & \textbf{X} & \textbf{X} & & \\
+\cline{2-7}
+& Application of DT-augmented platform & & & & \textbf{X} & \textbf{X} \\
+\hline
+\multirow{2}{*}{\shortstack[l]{\textbf{Aim 2}\\ {\it In silico}\\ BiV repair}}
+& {\it In silico} model prediction (prototype) & \textbf{X} & \textbf{X} & \textbf{X} & & \\
+\cline{2-7}
+& {\it In silico} model prediction (platform) & & & & \textbf{X} & \textbf{X} \\
+\hline
+\multirow{2}{*}{\shortstack[l]{\textbf{Aim 3}\\ {\it In silico} ventricular\\ recruitment}}
+& Model formulation & \textbf{X} & \textbf{X} & & & \\
+\cline{2-7}
+& Model validation & & & \textbf{X} & \textbf{X} & \textbf{X} \\
+\hline
+\end{tabularx}
+}

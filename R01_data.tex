@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA MANAGEMENT AND SHARING PLAN -- BiVRepair R01
+%
+% Mirrors the NIH 2026 DMS Plan format page (required for due dates on
+% or after May 25, 2026): the seven numbered elements with checkbox
+% answers and the 100-word data-types/repository table (element 6).
+% Element 4 (limitation description, 300 words max) is left blank since
+% elements 1-3 are all yes. Same content as the filled official format
+% page, Data_management_sharing_plan.docx.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{definitions}
+\usepackage{amssymb} % checkbox symbols
+\newcommand{\chk}{\raisebox{-1pt}{$\boxtimes$}}
+\newcommand{\unchk}{\raisebox{-1pt}{$\square$}}
+\begin{document}
+
+\begin{center}
+\rule{\textwidth}{0.4pt}\\[.5em]
+\textbf{\uppercase{Data Management and Sharing Plan}}\\[.5em]
+\rule{\textwidth}{0.4pt}
+\end{center}
+
+\begin{enumerate}[leftmargin=2em, itemsep=.8em]
+
+\item Will there be maximum appropriate sharing of scientific data underlying peer-reviewed publications and other findings resulting from the work supported by this award (including preprints, refereed papers reported at conferences, and other findings)?\\[.2em]
+Yes\,\chk\quad No\,\unchk
+
+\item Will the scientific data underlying peer-reviewed publications be shared by the time of publication, or for other findings, by the end of the period of performance, which includes no-cost extensions?\\[.2em]
+Yes\,\chk\quad No\,\unchk
+
+\item Will shared scientific data be made available for at least as long as required by applicable data repository policies and/or journal policies?\\[.2em]
+Yes\,\chk\quad No\,\unchk
+
+\item If you answered ``no'' to elements 1, 2, or 3, or if you anticipate that sharing will be limited in some other way, please describe these limitations and the ethical, legal, or technical factors for them. Your response should specify a particular reason(s) for limiting sharing.
+
+\item If scientific data derived from human research participants will be shared, will privacy, rights, and confidentiality of participants be protected as outlined in NOT-OD-22-213?\\[.2em]
+Yes\,\chk\quad No\,\unchk\quad Not Applicable\,\unchk
+
+\item \begin{tabular}[t]{|p{.5\textwidth}|p{.38\textwidth}|}
+\hline
+\textbf{Expected Data Type} & \textbf{Established Repository or Example} \\
+\hline
+De-identified derived human data: clinical metrics, digital twin parameters, {\it in silico} repair predictions, growth trajectories, outcome labels & Public project repository hosted on GitHub, releases archived with digital object identifiers on Zenodo \\
+\hline
+Diagnostic digital twin pipeline source code and model configurations & PhysioBlocks, open source, hosted on the Inria GitLab \\
+\hline
+Cardiac growth model source code & svMultiPhysics, part of the open-source SimVascular project, hosted on GitHub \\
+\hline
+Human invasive cardiac magnetic resonance image series and pressure waveforms & Secure institutional storage at the University of Texas Southwestern Medical Center, access by data use agreement \\
+\hline
+\end{tabular}
+
+\item For studies subject to the NIH Genomic Data Sharing Policy (GDS) (e.g., using NIH funds to generate large-scale human genomic data):
+\begin{enumerate}[label=\alph*., leftmargin=1.5em, itemsep=.6em, topsep=.5em]
+\item Will you share all large-scale human genomic and associated data in a NIH-designated repository according to the accelerated timelines expected in the GDS Policy?\\[.2em]
+Yes\,\unchk\quad No\,\unchk\quad Not Applicable\,\chk
+\item Do you anticipate that when sharing you will be able to meet the expectations of the Institutional Certification in the GDS Policy?\\[.2em]
+Yes\,\unchk\quad No\,\unchk\quad Not Applicable\,\chk
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

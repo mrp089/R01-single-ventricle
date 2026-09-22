@@ -10,6 +10,7 @@
 #   make               build all PDFs below
 #   make budget        Yale_budget_justification.pdf
 #   make sow           Yale_statement_of_work.pdf
+#   make dms           Data_management_sharing_plan.pdf
 #   make figure        figures/aim3_figure.pdf  (Aim 3 preliminary-results figure)
 #   make aim3          aim3_preview.pdf         (Yale strategy content, rendered
 #                                                with the shared preamble)
@@ -25,7 +26,7 @@
 BIB_DOCS   = grant_application aim3_preview
 
 # Documents without citations
-PLAIN_DOCS = Yale_budget_justification Yale_statement_of_work
+PLAIN_DOCS = Yale_budget_justification Yale_statement_of_work Data_management_sharing_plan
 
 # Files shared by every document (rebuild when these change)
 COMMON_DEPS = preamble.tex definitions.sty abbreviations.tex abbreviations_martin.tex
@@ -48,13 +49,14 @@ ALL_PDFS = $(addsuffix .pdf,$(ALL_DOCS)) figures/aim3_figure.pdf
 # Date suffix for the `dated` target (format: YYYYMMDD)
 DATE = $(shell date +%Y%m%d)
 
-.PHONY: all budget sow aim3 application figure dated clean distclean
+.PHONY: all budget sow dms aim3 application figure dated clean distclean
 
 all: $(ALL_PDFS)
 
 # Convenience aliases
 budget:      Yale_budget_justification.pdf
 sow:         Yale_statement_of_work.pdf
+dms:         Data_management_sharing_plan.pdf
 aim3:        aim3_preview.pdf
 application: grant_application.pdf
 figure:      figures/aim3_figure.pdf

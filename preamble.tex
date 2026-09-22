@@ -60,7 +60,7 @@
 
 % references (use bib file)
 \usepackage[superscript]{cite}
-\renewcommand{\citeform}[1]{\textbf{#1}}
+% \renewcommand{\citeform}[1]{\textbf{#1}}
 \renewcommand\@biblabel[1]{[\textbf{#1}] }
 
 % captions
@@ -135,8 +135,9 @@
 \newcommand{\bfulit}[1]{\textbf{\ul{\textit{#1}}}}
 \newcommand{\note}[1]{\textbf{\textcolor{red}{#1}}}
 
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
 % aim block for the Specific Aims page: \aim{number}{title}{body}
-% (as in definitions.sty, but without the \\ after the title, which added a blank line)
 \usepackage{scrextend}
 \newcommand{\aim}[3]{%
 \par\textbf{Aim #1: #2}%
@@ -144,5 +145,3 @@
 #3
 \end{addmargin}%
 }
-
-\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
