@@ -135,4 +135,14 @@
 \newcommand{\bfulit}[1]{\textbf{\ul{\textit{#1}}}}
 \newcommand{\note}[1]{\textbf{\textcolor{red}{#1}}}
 
+% aim block for the Specific Aims page: \aim{number}{title}{body}
+% (as in definitions.sty, but without the \\ after the title, which added a blank line)
+\usepackage{scrextend}
+\newcommand{\aim}[3]{%
+\par\textbf{Aim #1: #2}%
+\begin{addmargin}[1em]{0em}
+#3
+\end{addmargin}%
+}
+
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}

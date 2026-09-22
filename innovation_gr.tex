@@ -1,51 +1,13 @@
 \subsubsection{Predicting Long-Term Ventricular Growth with a Constrained Mixture Model}
 
-Whether a borderline ventricle will grow enough after recruitment to sustain a
-biventricular circulation is, at its core, a question of long-term \gls*{gr}: the
-myocardium must add mass and reshape its chamber over the 8 to 15 months between
-the recruitment procedure and the follow-up exam. No clinical measurement forecasts
-this. The suitability criteria in use today, indexed end-diastolic volume and
-end-diastolic pressure, describe the ventricle as it is on the day of the exam;
-they cannot say whether its tissue will remodel toward an adequate size or stall.
-The pre-recruitment \gls*{dt} of Aim~1 captures the ventricle's state, but a snapshot,
-however complete, does not contain its trajectory.
+Whether a recruited ventricle will grow enough to sustain a biventricular circulation is a question of long-term \gls*{gr}, and no clinical measurement forecasts it: indexed end-diastolic volume and end-diastolic pressure describe the ventricle on the day of the exam, not its trajectory.
 
-\textbf{Growth as a mechanistic process, not a prescribed outcome.} For three decades,
-cardiac \gls*{gr} has been modeled almost exclusively with kinematic growth theory,
-which imposes the direction and extent of growth through an inelastic growth
-tensor. Such models reproduce the shape and mass changes seen in athlete's heart,
-dilation, and hypertrophy efficiently, and they have been applied to heart failure
-and infarction. But they prescribe the answer rather than predict it: the growth
-is put in by hand, decoupled from the tissue-level turnover that actually drives
-adaptation, and unable to represent the return to a stable size once loading
-normalizes. For a proposal that must decide, before surgery, whether growth will be
-\emph{sufficient}, a model whose growth is prescribed cannot provide the answer.
+\begin{itemize}
+\item \textbf{Paradigm shift: growth as an emergent outcome, not a prescribed one.} Kinematic growth models, the field's standard for three decades, impose the direction and extent of growth by hand and thus cannot decide whether growth will be \emph{sufficient}. In the constrained mixture theory, growth emerges from myocyte and collagen turnover chasing a homeostatic mechanical set-point.
 
-\textbf{A constituent-level model that lets growth emerge.} The constrained mixture
-theory instead treats the myocardial wall as a mixture of constituents, contractile
-myocytes and passive collagen and matrix, each deposited and degraded to chase a
-homeostatic mechanical set-point. Growth is then an emergent consequence of the
-imbalance between the tissue's mechanical state and that set-point, exactly the
-mechanobiology observed in living myocardium. Our group developed and validated the
-first homogenized constrained mixture model of cardiac \gls*{gr}, in which
-concentric and eccentric remodeling arise from constituent turnover rather than
-being imposed, and which reproduces both stable growth that returns to homeostasis
-and unstable growth that runs away, from a single set of equations
-(Figure~\ref{fig:aim3prelim}). We subsequently removed the memory barrier that had
-confined constrained mixture models to short simulated horizons, making
-organ-scale growth over months of physiological time computationally tractable.
-These are the two capabilities the recruitment question requires, and both are
-already in hand.
+\item \textbf{First homogenized constrained mixture model of cardiac \gls*{gr}.} Developed and validated by our group, it reproduces both stable growth that returns to homeostasis and unstable growth that runs away from a single set of equations (Figure~\ref{fig:aim3prelim}); our removal of the memory barrier of classical constrained mixture models makes organ-scale growth over months of physiological time tractable.
 
-\textbf{Why this matters for recruitment.} Recruitment is precisely the setting the
-theory was built for: a controlled, sustained change in mechanical load imposed on
-a chamber, followed months later by an imaged outcome. Initialized from the
-pre-recruitment \gls*{dt} and driven by the post-recruitment loading, the model
-predicts the growth trajectory of chamber volume, wall thickness, and mass, and
-therefore whether the ventricle reaches an adequate size. A prediction of
-\emph{insufficient} growth is the clinically actionable one: it identifies, before
-any surgery, the children for whom recruitment would add risk without benefit
-before the eventual Fontan, sparing them a futile intermediate operation. This
-moves the field beyond size-and-pressure cutoffs toward a mechanistic forecast of
-how the individual ventricle will remodel, the long-term counterpart to the
-short-term physiology that Aims~1 and~2 recover from the same \gls*{icmr} exam.
+\item \textbf{First mechanistic forecast of recruitment adequacy.} Initialized from the pre-recruitment \gls*{dt} of Aim~1 and driven by the post-recruitment loading, the model predicts chamber volume, wall thickness, and mass over the 8--15 month recruitment interval, the long-term counterpart to the short-term physiology of Aims~1 and~2.
+
+\item \textbf{A prediction of insufficient growth is the actionable one.} It identifies, before any surgery, the children for whom recruitment would add risk without benefit, moving patient selection beyond size-and-pressure cutoffs toward a mechanistic forecast of the individual ventricle.
+\end{itemize}
