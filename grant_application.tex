@@ -16,7 +16,7 @@
 Our \textbf{long-term goal} is to establish patient-specific Digital Twins (DTs) as decision-support in cardiovascular surgery. Our \textbf{objective} is to build a DT for each of \textasciitilde{}\textcolor{red}{50} children per year in our BiV repair program, borderline left or right, and test it retrospectively against each child's course. Each DT is built from magnetic resonance imaging with simultaneous pressure measurement (iCMR\cite{reddy2020_iCMR}), and the planned surgery is performed {\it in silico}. Our teams' 3D DTs\cite{chabiniok_BMMB2012} personalized therapy\cite{sermesant12} and captured whole-heart contraction\cite{pfaller19a}, yet none entered clinical practice. To give clinicians a tool they actually use, we deliberately build the diagnostic DT in 0D, a spherical approximation of the 3D ventricle: created on-the-fly during the exam, retaining tissue behavior\cite{caruel13}, and proven in clinical proof-of-concepts\cite{ruijsink20,gusseva21a,gusseva25}. We will compare DT parameters with repair success, predicted hemodynamics with the post-operative course, and predicted growth in volume, mass, and wall thickness with the 8--15-month follow-up. Our \textbf{central hypothesis} is that \bfit{DT-derived functional parameters, reflecting myocardial health and resilience, identify the children who benefit from BiV conversion better than today's volume and pressure criteria.} The Heart Center (Children's Health, UT Southwestern Medical Center), one of few US centers with routine iCMR\cite{reddy2020_iCMR} \& extensive DT experience\cite{chabiniok17,gusseva21,gusseva25a}, has developed a BiV repair program, and Yale built the growth model\cite{gebauer23,gebauer24}.
 
 \aim{1}{Quantify each patient's cardiovascular physiology before surgery}{
-We hypothesize that functional metrics correlate better with successful BiV repair than the measured volume and pressure. The pressure, volume, and outflow data yield A) the standard clinical metrics, end-diastolic volume and pressure, B) ventricular work and ventricular and arterial elastance, surrogates of contractility and circulation resistance, and C) myocardial stiffness and contractility from the DT created on-the-fly during the exam. This aim delivers selection criteria built on capability, not size.
+We hypothesize that functional metrics correlate better with successful BiV repair than the measured volume and pressure. The pressure, volume, and outflow data yield A) the standard clinical metrics, end-diastolic volume and pressure, B) ventricular work and ventricular and arterial elastance, surrogates of contractility and circulation resistance, and C) myocardial stiffness and contractility from the DT created on-the-fly during the exam. This aim delivers selection criteria built on capability (function), and not only on size.
 }
 
 \aim{2}{Predict the short-term physiology after biventricular repair}{
@@ -43,24 +43,25 @@ The project unites two firsts: on-the-fly physiology assessment and a mechanisti
 %\subsubsection{\blah} 
 \textit{The patients with Single-Ventricle Heart Disease:}
 Approximately 1 in every 2,000 babies in the United States are born with a single-ventricle heart diseases (SVHD). These patients undergo single-ventricle palliation -- a staged repair culminating in the Fontan circulation \cite{khairy2007_univentricularHeart}.  In this circulation, the systemic venous return is rerouted to the lungs via a direct connection of venae cavae to the pulmonary arteries, the so-called total cavopulmonary
-connection (TCPC). As a result, the single existing ventricle acts as a pump for systemic and pulmonary circulations in series.  However, Fontan circulation is associated with various long-term complications affecting directly the heart (progressive decline in cardiac function and heart failure\cite{khairy2008_longtermSurvivalFontan}) and serious extra-cardiac complications  (e.g., pulmonary hypertension, liver fibrosis, protein losing enteropathy), substantially affecting long-term survival and quality of life.
+connection (TCPC). As a result, the single existing ventricle acts as a pump for systemic and pulmonary circulations in series.  However, the Fontan circulation is associated with various long-term complications affecting directly the heart (progressive decline in cardiac function and heart failure\cite{khairy2008_longtermSurvivalFontan}) and serious extra-cardiac complications  (e.g., pulmonary hypertension, liver fibrosis, protein losing enteropathy), substantially affecting long-term survival and quality of life.
 
 \smallskip
 \textit{Patients with SVHD and a borderline-size ventricle:}
-A subgroup of patients with SVHD is described as with a ventricle of ``borderline size'' (Figure~\ref{fig:intro_DORV} displays an example of a patient with double-outlet right ventricle and 
+A subgroup of patients with SVHD is described as with a ventricle of ``borderline size'' (Figure~\ref{fig:intro_DORV} displays an example of a patient with the so-called double-outlet right ventricle 
 \begin{wrapfigure}{r}{0.3\textwidth}
 %\begin{figure}[h]
     \centering
     \includegraphics[width=0.3\textwidth]{figures/intro/DORV_and_normal_schematics.png}
 \includegraphics[width=0.30\textwidth]{figures/intro/DORV06_4ch.jpg}
-    \caption{\textbf{Illustration of a heart presenting double-outlet right ventricle (DORV) with a borderline-size left ventricle (LV) a ventricular septal defect (VSD), and MR image.
+    \caption{\textbf{Schematics of a heart with double-outlet right ventricle (DORV) with a borderline-size left ventricle (LV) a ventricular septal defect (VSD), and MR image.
     % and simulating waveforms confronted with the measured data. 
     }} 
     \label{fig:intro_DORV}
     \vspace{-2pt}
 %\end{figure}
 \end{wrapfigure}
-borderline-size left venricle). Even though the ventricular size plays a substantial role in the heart function (we would typically think of ventricles with end-diastolic volume indexed to body surface area iEDV 25-40 ml/m$^2$), the borderline ventricle represents rather a spectrum\cite{lam2025_borderlineVentricleReview}. In addition to the ventricular volume, also the size of ventricular septal defect, diameter of valves etc. need to be considered.  Patients with a borderline-size ventricle historically underwent single-ventricle palliation, with all the long-term adverse effects associated with the Fontan circulation. 
+and
+borderline-size left ventricle). Even though the ventricular size plays a substantial role in the heart function (we would typically think of ventricles with end-diastolic volume indexed to body surface area iEDV 25-40 ml/m$^2$), the borderline ventricle represents rather a spectrum\cite{lam2025_borderlineVentricleReview}. In addition to the ventricular volume, also the size of ventricular septal defect, diameter of valves etc. need to be considered.  Patients with a borderline-size ventricle historically underwent single-ventricle palliation, with all the long-term adverse effects associated with the Fontan circulation. 
 
 \smallskip
 \textit{Complex Biventricular Repair Surgery:}
@@ -90,7 +91,7 @@ is crucial, in order to predict the outcome and minimize the post-surgery risks.
     \caption{\textbf{Cardiac MR image demonstrating the increase of ventricular size (*) before (A) and after (B) ventricular recruitment. 
     % and simulating waveforms confronted with the measured data. 
     }
-    \textcolor{red}{Update using a more recent patient?}
+    %\textcolor{red}{Update using a more recent patient?}
     } 
     \label{fig:ventricle_recruitment_example}
     \vspace{-2pt}
@@ -122,14 +123,14 @@ the risk of an insufficient growth in next 6-15 months post-VR procedure, leadin
 \subsubsection{Multimodality Data Analysis in Clinical Setup}
 A specialized Pressure-Volume (PV) loop cathethers are considered as the gold standard in the acquisition of simultaneous ventricular pressure and volume data. The cathether uses a standard pressure sensor; the volume estimation is based on an electrical conductance measurement by a series of electrodes, assuming the proportionality between the conductance and the cavity volume. 
 %The PV loop conductance catheter has been used in pediatric applications. 
-The advanced analysis (PV loop plot, functional indicators of cardiovascular system) are displayed real time on a dedicated screen in the cathlab, providing an instantaneous monitoring of cardiovascular physiology and allowing to avoid a low-quality signal records.  Even though the conductance catheter-system has been used in pediatric applications\cite{hiremath2023_PVloop_review}, it is not suitable for our group of patients for two reasons: First, even the smallest conductance catheter would carry potential risks during the procedure for our smaller patients. Secondly, the catheter is primarily designed for the volume measurement of the systemic left ventricle (which is ellipsoidal in shape) and the accuracy of volume measurement for the ventricles of miscellaneous shapes in the candidates for BiV repair would be compromised.
+The advanced analysis (PV loop plot, functional indicators of cardiovascular system) are displayed real time on a dedicated screen in the cathlab. This  provides an instantaneous monitoring of cardiovascular physiology and allows for avoiding a low-quality signal records.  Even though the conductance catheter-system has been used in pediatric applications\cite{hiremath2023_PVloop_review}, it is not suitable for our group of patients for two reasons: First, even the smallest conductance catheter would carry potential risks during the procedure for our smaller patients. Secondly, the catheter is primarily designed for the volume measurement of the systemic left ventricle (which is ellipsoidal in shape) and the accuracy of volume measurement for the ventricles of miscellaneous shapes in the candidates for BiV repair would be compromised.
 
-Cardiovascular Magnetic Resonance (CMR) imaging combined with catheterization -- also called invasive cardiovascular magnetic resonance imaging (iCMR)\cite{reddy2020_iCMR} -- gives the opportunity for acquiring the dynamic data of heart function and pressure simultaneously even in small patients, while the CMR component provides accurate and reproducible measurements of ventricular volumes. Additionally, CMR provides quantitative values of flow in large vessels (allowing for analyzing, e.g., flow through systemic and pulmonary circulations, or functional assessment of heart valves). The iCMR exam has been performed in our Heart Center since around 10 years ago; we belong to only a few pediatric centers in the US, where iCMR is performed routinely. 
+Cardiovascular Magnetic Resonance (CMR) imaging combined with catheterization -- also called invasive cardiovascular magnetic resonance  (iCMR)\cite{reddy2020_iCMR} -- gives the opportunity for acquiring the dynamic data of heart function and pressure simultaneously even in small patients, while the CMR component provides accurate and reproducible measurements of ventricular volumes. Additionally, CMR provides quantitative values of flow in large vessels (allowing for analyzing, e.g., flow through systemic and pulmonary circulations, or functional assessment of heart valves). The iCMR exam has been performed in our Heart Center since around 10 years ago; we belong to only a few pediatric centers in the US, where iCMR is performed routinely. 
 However, even when having such rich datasets at hand (including morphology, function, tissue characteristics, flow, pressures), the final analysis relies mostly on interpreting the data items separately, and their combining (in line with physiological or biophysical characteristics) is limited. Moreover, the iCMR exam is typically evaluated offline, after the transfer of the acquired data into an external workstation. This may compromise the accuracy of results, if some data item is found to be of an inferior quality. The offline evaluation also significantly reduces the potential of the iCMR; tracking of changes of physiology during the procedure (as is usual when using the PV loop catheters) is important in an actual application of the method.
 
 
-Rather than analyzing the iCMR data offline -- of which we performed several proof-of-concept works\cite{Ruijsink_Fontans_PLOSone,gusseva23,gusseva25,gusseva25a} (see Figure~\ref{fig:AJP2025}) -- \textbf{we will synthesize the CMR and pressure data and biomechanical models of the patients' cardiovascular physiology ``on-the-fly'' during the iCMR exam.} 
-This will provide morphology and functional indicators -- such as ventricular volumes, function of valves, vascular resistance in various parts of the circulation 
+Rather than analyzing the iCMR data offline -- of which we performed several proof-of-concept works\cite{Ruijsink_Fontans_PLOSone,gusseva23,gusseva25,gusseva25a} (see a selected example in Figure~\ref{fig:AJP2025}) -- \textbf{we will synthesize the CMR and pressure data and biomechanical models of the patients' cardiovascular physiology ``on-the-fly'' during the iCMR exam.} 
+This will provide morphology and functional indicators -- such as ventricular volumes, function of valves, vascular resistance in 
 \begin{wrapfigure}{r}{0.45\textwidth}
     \centering
     \includegraphics[width=0.45\textwidth]{figures/prelim_studies/AJP2025_edit.png}
@@ -138,6 +139,7 @@ This will provide morphology and functional indicators -- such as ventricular vo
     \label{fig:AJP2025}
     \vspace{-2pt}
 \end{wrapfigure}
+various parts of the circulation 
 (relevant to the actual patient), as well as various indicators of the ventricular contractile function (end-systolic elastance or actual myocardial contractility). %The on-the-fly iCMR data analysis will increase the potential of the method by providing a direct feedback to the operators.
 This approach will limit the risks of patient non-enrollment due to an inferior data quality discovered a-posteriori, in addition to providing a direct feedback to the operators during the procedure.   
 %Avoiding a limited interpretability of the offline data analysis will be important for the patients, who will benefit from the actual advantage of the simultaneous cardiac CMR and catheter data. 
@@ -158,11 +160,11 @@ t)$ -- the ratio of the instantaneous pressure $P(t)$ and volume $V(t)$ -- was  
 %\end{equation} 
 $E(t)=\frac{P(t)}{V(t)-V_0}$. 
 The correction volume $V_0$ is classically described as the 0-pressure intercept of a local linearization of the end-systolic pressure volume relationship (ESPVR).
-The ventricular time-varying elastance provides a meaningful insight into  cardiac mechanics.
+%The ventricular time-varying elastance provides a meaningful insight into  cardiac mechanics.
 The maximum value of ventricular elastance (occurring at the end-systole and denoted $E_{es}$) is one of the most common surrogates of the myocardial contractility.  
-The concept was developed directly within the cardiac physiology research community and has been heavily used in preclinical studies since 1970s. 
-Medical professionals gain familiarity with the concept early during their studies of medical physiology  \cite{Ganong_physiologyTextbook,Guyton_textbook}  as well when undergoing  cardiology training  \cite{Braunwald_CardiologyTextbook}, where the end-systolic elastance ($E_{es}$) is traditionally presented as a ``fundamental metric''  to quantify myocardial contractility of heart ventricle.  
-Easy to implement and well accepted by the clinical community\cite{hiremath2023_PVloop_review}, it has several drawbacks: estimating the correction volume $V_0$ typically requires varying loading conditions (preload, afterload) to track the ESPVR, which would not be suitable in the iCMR setup). The so-called single-value estimation methods (e.g., by by Senzaki et al.~\cite{senzaki_single-beat_1996}; Shishido et al.~\cite{shishido_single-beat_2000}; and Chen et al.~\cite{chen_noninvasive_2001}) are attractive and were used in some clinical works.  However, it was shown that the imprecision in $E_{es}$ and $V_0$ estimates\cite{legall19}  may significantly compromise the accuracy and reliability of the time-varying elastance modeling approaches. Moreover, various works\cite{wo_assessment_2019,kjorstad_pressure-volume-based_2002} compared the performances of several phenomenological estimation methods. % (including those by Senzaki, Shishido and Chen)
+The concept was developed directly within the cardiac physiology research community and has been often used in preclinical studies since 1970s. 
+Medical professionals gain familiarity with the concept early during their studies of medical physiology  \cite{Ganong_physiologyTextbook,Guyton_textbook}  as well when undergoing  cardiology training  \cite{Braunwald_CardiologyTextbook}, where the end-systolic elastance ($E_{es}$) is traditionally presented as a ``fundamental metric''  to quantify the contractility of heart ventricle.  
+While easy to implement and well accepted by the clinical community\cite{hiremath2023_PVloop_review}, it has several drawbacks: estimating the correction volume $V_0$ typically requires varying loading conditions (preload, afterload) to track the ESPVR, which would not be suitable in the iCMR setup. The so-called single-value estimation methods (e.g., by by Senzaki et al.~\cite{senzaki_single-beat_1996}; Shishido et al.~\cite{shishido_single-beat_2000}; and Chen et al.~\cite{chen_noninvasive_2001}) are attractive and were used in some clinical works.  However, it was shown that the imprecision in $E_{es}$ and $V_0$ estimates\cite{legall19}  may significantly compromise the accuracy and reliability of the time-varying elastance modeling approaches. Moreover, various works\cite{wo_assessment_2019,kjorstad_pressure-volume-based_2002} compared the performances of several phenomenological estimation methods. % (including those by Senzaki, Shishido and Chen)
 They observed  a poor correlation between all these methods and the gold standard method represented by the multi-beat $E_{es}$ estimation and concluded that it is unlikely that the single-beat estimation methods could adequately quantify the inotropy.
  
 Rigorously formulated biomechanical models (see, e.g.,  reviews \cite{chabiniok16,wang2015_review} and references therein) are  designed to provide biophysically-based objective measures \cite{wang2009modelling,xi2013estimation,hadjicharalambous17,chabiniok12,asner15}, overcoming the drawback of phenomenologically motivated methods.
@@ -170,7 +172,7 @@ Rigorously formulated biomechanical models (see, e.g.,  reviews \cite{chabiniok1
 The associated heavy computations when using 3D biomechanical models  and technical difficulty in setting up the complex models, in practice, reduce the potential of deploying such methods for large-scale clinical studies, as experienced by our investigative team\cite{sermesant12,chabiniok_BMMB2012,pfaller19a}. 
 Under the assumptions of a 0D cylindrical or spherical geometry, a 3D biomechanical model of heart ventricle can be simplified. Such a geometry and kinematics reduction, while the constitutive relations keeping as in the full 3D model \cite{chapelle_energy-preserving_2012}, was performed, e.g., in works\cite{genet2023_cylindricalModel,caruel13,chabiniok22_poro}. 
 %MOVE TO APPROACH/PRELIM DATA (substantiating use of 0D): We previously demonstrated that the geometry-reduced biomechanical models can provide mechanistic insight into heart failure \cite{ruijsink20},  structural heart disease \cite{gusseva21}, surgical intervention planning \cite{gusseva21a,gusseva25},  or physiological monitoring (e.g., hemodynamic stability assessment or response to inotropic agents \cite{legall20}). 
-In several works supervised by the PI, it was shown that it is technically feasible for  medical doctors to run such models\cite{ruijsink20,ruijsink_FIMH2019,legall20,legall19,waugh_FIMH2021}. In these projects, the deep insight of medical doctors into the actual physiological and clinical aspects allowed for invaluable modifications of the problem-specific modeling framework, and their subsequent interpretation of the results. \textbf{The approach of a direct involvement of medical doctors in the work employing the Digital Twins -- while using modeling frameworks suitable for the clinical environment -- will be crucial for actual clinical translations of the novel techniques in the planning of optimal clinical management of the patients with SVHD and a borderline-size ventricle. } 
+In several works supervised by the PI, it was shown that it is technically feasible for  medical doctors to set up and run such models\cite{ruijsink20,ruijsink_FIMH2019,legall20,legall19,waugh_FIMH2021}. In these projects, the deep insight of medical doctors into the actual physiological and clinical aspects allowed for some key adjustments of the problem-specific modeling framework, and  subsequent invaluable interpretation of the results and dissemination within clinical communities. \textbf{The approach of a direct involvement of medical doctors in the work employing the Digital Twins -- while using modeling frameworks suitable for the clinical environment -- will be crucial for actual successful clinical translations of the novel techniques in the planning of optimal clinical management of the patients with SVHD and a borderline-size ventricle. } 
 
 The iCMR exam and the proposed evaluation will therefore provide us with a three-level analysis: standard clinical metrics (such as ventricular volumes, ejection fraction, pressures, trans-valvular and large-vessel flow); functional indicators common in cardiovascular physiology (such as the ventricular elastance $E_{es}$); and the actual biophysical properties of the heart (myocardial contractility; vascular resistance of the whole circulation as well as localized to various sites of importance -- pulmonary circulation; upper-body systemic circulation personalized, e.g., by incorporating aorto-pulmonary collaterals and power-loss in Glenn connection; lower-body circulation, etc.). 
  \textbf{This three-level evaluation -- from measurements
@@ -186,9 +188,10 @@ up to indicators of actual organ function -- can be each confronted with the out
 
 \subsubsection{Predictive capability of Digital Twins}
 %or clinically valuable predictions contributing, e.g., to the optimization of Cardiac Resynchronization Therapy \cite{NiedererCardRes2010,sermesant12}. % or left ventricular assist device setup \cite{bonini2026_LVAD}. 
-Apart from augmenting the clinical data assessment, as was remarked above, the biophysical components of DTs lend themselves to predictivity. Previously, we demonstrated the DT-predictions for cardiac-resynchronization therapy (CRT),\cite{sermesant12} or the outcome of pulmonary valve replacement in the patients with repaired tetralogy of Fallot\cite{gusseva21a}. Our recent modeling work\cite{gusseva25} was related to predicting the outcome of BiV repair (i.e., directly the topic of current proposal), however, in a different type of congenital pathology: these were patients with normal-sized ventricles, however, with discordant connections between atria and ventricles, as well as between the ventricles and outflows to the circulations (the so-called congentitally-corrected transposition of great arteries, ccTGA), and modeling of their BiV repair gave a valuable insight into the possible outcomes.  
+Apart from augmenting the clinical data assessment, as was remarked above, the biophysical components of DTs lend themselves to predictivity. Previously, we demonstrated the DT-predictions for cardiac-resynchronization therapy (CRT),\cite{sermesant12} or the outcome of pulmonary valve replacement in the patients with repaired tetralogy of Fallot\cite{gusseva21a}. Our recent modeling work\cite{gusseva25} was related to predicting the outcome of BiV repair (i.e., directly the topic of current proposal), however, in a different type of congenital pathology: these were patients with normal-sized ventricles, however, with discordant connections between atria and ventricles, as well as between the ventricles and outflows to the circulations (the so-called congentitally-corrected transposition of great arteries, ccTGA), and modeling of their BiV repair %(specifically, the double switch procedure, establishing the physiological connections of the the morphological ventricles with the inflows and outlfows) 
+gave a valuable insight into the possible outcomes.  
 
-\textcolor{red}{\it To do: Add some previous works related to G\&R}.
+The predictive reach of DTs has so far ended at the heartbeat time scale. Models of cardiac \gls*{gr}, which unfolds over months, have been dominated by kinematic growth theory\cite{rodriguez94}: prescribing where and how much the ventricle grows, these models reproduce the shape changes of hypertrophy, dilation, and infarction\cite{goktepe10,costabal19,saez15}, but they cannot answer whether a given ventricle will grow, because the growth is imposed rather than predicted. The constrained mixture theory\cite{humphrey02a} instead lets growth emerge from the turnover of myocytes and collagen chasing a homeostatic mechanical set-point, and its homogenized formulation\cite{cyron16,braeu16} made this mechanistic description tractable at organ scale. Building on it, we developed the first homogenized constrained mixture model of cardiac \gls*{gr}\cite{gebauer23} and made it efficient enough for months-long, patient-specific simulation\cite{gebauer24}. Applying it to forecast whether a recruited borderline ventricle will reach a size that can sustain a \gls*{biv} circulation is, to our knowledge, the first mechanistic prediction of ventricular recruitment adequacy. Its output is the pre-surgery identification of children whose ventricles will grow insufficiently.
 
 \textbf{For our current cohort of patients with borderline-size ventricles, the short-term prediction of the physiology after the ventricular septation and long-term prediction of ventricular growth (if ventricular recruitment is considered), will provide valuable risk analysis of the post-surgery outcomes.}
 
@@ -220,21 +223,22 @@ Apart from augmenting the clinical data assessment, as was remarked above, the b
 \subsubsection{Preliminary Data}
 Cardiac modeling has a long tradition and several sophisticated models were already created and  are waiting for their right application.  The models with a detailed 3D geometry are attractive and becoming accessible. The investigators of this project have extensive experience  with pursuing scientific work with complex models\cite{chabiniok16} of various parts of the cardiovascular system interacting with clinical data. This includes, for instance, a small- \cite{kovar_LBMperfusion_2026} and large-vessel\cite{jarolimova_AJP2026} flow models, a four-chamber heart model with a detailed pericardium representation\cite{pfaller19a} and while including a G\&R component\cite{gebauer23,pfaller24}, to give some examples. 
 However, even the clinical proof-of-concept study
-demonstrating predictivity of a 3D  electro-mechanical cardiac model for cardiac resynchronization therapy\cite{sermesant12}
+demonstrating predictivity of a 3D  electro-mechanical cardiac model for cardiac resynchronization therapy\cite{sermesant12} (Figure~\ref{fig:CRT})
 -- considered as a breakthrough work in the field -- included only a very limited number of subjects, which decreases the actual clinical potential.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \subfigure[Prediction for patients undergoing CRT\cite{sermesant12} using a 3D model\cite{chapelle_energy-preserving_2012}.]{
-\begin{minipage}{0.66\textwidth}
+\begin{minipage}{0.65\textwidth} %.66
 \includegraphics[width=1\columnwidth]{figures/prelim_studies/CRT.png}
 %    \includegraphics[width=0.3\columnwidth]{figures/3D/preCRT_withLegend.png}
 %    \includegraphics[width=0.3\columnwidth]{figures/3D/postCRT_withLegend.png}\\
 %    \includegraphics[width=0.3\columnwidth]{figures/3D/preCRT_LVdpdt_forReview.eps}
 %    \includegraphics[width=0.3\columnwidth]{figures/3D/postCRT_LVdpdt.eps}    
 \end{minipage}
+\label{fig:CRT}
 }
 \subfigure[0D-model\cite{caruel13} predictions for a patient with ccTGA undergoing double switch procedure\cite{gusseva25}.]{
-    \begin{minipage}{0.33\textwidth}
+    \begin{minipage}{0.28\textwidth} %.33
         %\centering
         
         \includegraphics[width=\textwidth]{figures/prelim_studies/ccTGA_PVloops.png} \\
@@ -242,24 +246,24 @@ demonstrating predictivity of a 3D  electro-mechanical cardiac model for cardiac
 %        \caption{Prediction for patients with ccTGA undergoing double switch procedure.}
 %        \label{fig:mini1}
     \end{minipage}   
+\label{fig:ccTGA}    
 }    
-\caption{\textbf{Illustration of different-complex models in clinical proof-of-concept works.} The substantial acceleration of computation and simplification of Digital Twin creation in (b) 
-allowed for simulating a wide number of scenarios -- several levels of pulmonary band tightening and the complex double-switch surgery (swapping the outflows and inflows of both ventricles) -- suitable to pursue even for a larger patient cohort (and possibly even for an actual clinical trial). 
+\caption{\textbf{Illustration of models of different complexity in clinical proof-of-concept works.} The substantial acceleration of computation and simplification of Digital Twin creation in (b) 
+allowed for simulating a wide number of scenarios -- several levels of pulmonary band tightening and complex double-switch surgery (swapping the outflows and inflows of both ventricles) -- suitable to pursue even for a larger patient cohort (or actual clinical trial). 
     } 
     \label{fig:example_3D_CRT}
     \vspace{-2pt}
 \end{figure}
 
 On the contrary to the computationally-intensive models with 3D geometry, we previously demonstrated that biomechanical models with a reduced-order geometry and kinematics %\cite{caruel13} 
-can lead to clinically relevant studies: they can provide mechanistic insight into heart failure \cite{ruijsink20},  structural heart disease \cite{gusseva21}, intervention planning \cite{gusseva21a,gusseva25,aramburu24},  or physiological monitoring at ICU\cite{waugh_FIMH2021} or hemodynamic stability assessment or response to inotropic agents during general anesthesia\cite{legall20}).  Recently, we employed this modeling framework for a group of patients with congenitally-corrected transposition of great arteries (ccTGA)\cite{gusseva25} -- patients with abnormal atrio-ventricular (AV) and ventricular-arterial (VA) connections, who are prone to the failure of the RV connected in the high-pressure systemic circulation. %Such a model provided valuable insights.
+can lead to clinically relevant studies: they can provide mechanistic insight into heart failure \cite{ruijsink20},  structural heart disease \cite{gusseva21}, intervention planning \cite{gusseva21a,gusseva25,aramburu24},  or physiological monitoring at ICU\cite{waugh_FIMH2021} or hemodynamic stability assessment or response to inotropic agents during general anesthesia\cite{legall20}).  Recently, we employed this modeling framework for a group of patients with congenitally-corrected transposition of great arteries (ccTGA)\cite{gusseva25} -- patients with abnormal atrio-ventricular (AV) and ventricular-arterial (VA) connections, who are prone to the failure of the RV connected in the high-pressure systemic circulation (Figure~\ref{fig:ccTGA}). %Such a model provided valuable insights.
 
 Patients with ccTGA can be treated by a double switch operation (DSO) -- a biventricular repair surgery restoring the normal anatomical connection of the LV (RV) to the systemic (pulmonary) circulation. In this proof-of-concept work, the in silico DSO suggested that three patients (out of six included) would require a substantial augmentation of LV contractility between 54 \% and 80 \% and an increase in PVA between 38 \% and 79 \% with respect to the baseline values to accommodate the increased afterload of the systemic circulation. On the contrary, the baseline functional state of the remaining three patients was predicted to be adequate to sustain cardiac output after the DSO. The model-derived predictions from in silico surgeries offered valuable insights that enhance understanding of physiology and has the potential to assist in guiding treatment strategies.
 
-As for the actual cohort of the patients with borderline-size ventricle, our pilot study pursued by our investigation team and presented at the Cardiopulmonary Physiome Workshop 2026\cite{chabiniok_Physiom2026abstract} contains six patients (P1-6) with double-outlet right ventricle (DORV) who underwent iCMR exam pre-BiV conversion. The iCMR data provided information about volume and pressure loading (EDV and EDP); end-systolic volume (ESV). We adapted the methods from our previous work\cite{gusseva25} to create Digital Twins, which augmented the data analysis by providing myocardial passive stiffness and active contractility.  
+As for the actual cohort of the patients with a borderline-size ventricle, the pilot study pursued by our investigative team and presented at the Cardiopulmonary Physiome Workshop 2026\cite{chabiniok_Physiom2026abstract} contains six patients (P1-6) with double-outlet right ventricle (DORV) who underwent iCMR exam pre-BiV conversion. The iCMR data provided information about the volume and pressure loading (EDV and EDP); end-systolic volume (ESV). We adapted the methods from our previous work\cite{gusseva25} to create Digital Twins, which augmented the data analysis by providing the myocardial contractility.  
 %Figure~\ref{fig:DT_baseline} illustrates the Digital Twin created from a selected patient. 
 
-
-Models predicted that P1-2 would require post-BiV conversion an increase of HR by 20-30\%, in addition to the 
+The models predicted that P1-2 would require post-BiV conversion an increase of HR by 20-30\%, in addition to the 
 \begin{wrapfigure}{r}{0.77\textwidth}
 %\begin{figure}%[t!]
     \centering
@@ -273,21 +277,29 @@ Models predicted that P1-2 would require post-BiV conversion an increase of HR b
 increase of preload to 15 mmHg (suggesting a substantial risk). While P3 had also borderline LV (iEDV 44 ml/m$^2$), 
 the model suggested an increase of HR by 10\% (still normal value for the patient), suggesting a lower risk. The models for P4-6 predict that their LVs should be able to support the systemic circulation without considerable risks. The post-surgery ICU length of stay were 51; 14; 2; 5; 6; and 41 days for P1-6. This was in line with model-predictions for P1-2 (high risk) and P3-5 (low risk). While the model predicted low risk for P6, the ICU stay was 41 days due to other acute complications (pneumonia), see table in Figure~\ref{fig:BiV_table}. 
 
-Within our Heart Center -- and with direct feedback provided by cardiologists and surgeons -- we have also recently advanced the proof-of-concept of automatizing of DT creation and a {\it in silico} interventions using a dedicated Graphical User Interface (GUI). The Digital Twin in Figure~\ref{fig:GUI} is motivated by the closed-loop Fontan circulation we previously modeled in\cite{aramburu24}. Using the GUI, the clinicians of our Heart Center had the chance to test common scenarios of pharmacological (e.g., pulmonary vasodilators\cite{ruijsink_FIMH2019}) or the effect of an interventional closure of the Fontan fenestration (an artificial connection which allows for a portion of blood from inferior vena cava bypassing the pulmonary circulation and directly entering the heart through the atrium (as directly depicted in Figure~\ref{fig:GUI}). 
+Within our Heart Center -- and with direct feedback provided by cardiologists and surgeons -- we have also recently advanced the proof-of-concept of automatizing of DT creation and a {\it in silico} interventions using a dedicated Graphical User Interface (GUI). The Digital Twin in Figure~\ref{fig:GUI} is motivated by the closed-loop Fontan circulation we previously modeled\cite{aramburu24}. Using the GUI, the clinicians of our Heart Center had the chance to test common scenarios of pharmacological intervention (e.g., pulmonary vasodilators\cite{ruijsink_FIMH2019}) or the effect of a closure of the Fontan fenestration (an artificial connection which allows for a portion of blood from inferior vena cava bypassing the pulmonary circulation and directly entering the heart through the atrium (as displayed in Figure~\ref{fig:GUI}). 
 
 \begin{figure}%[t!]
     \centering
 %    \includegraphics[width=1\columnwidth]{figures/schematics/circuit_DORVwithGlenn.pdf}
     %\includegraphics[width=1\columnwidth]{figures/schematics/DORV_BiV_model.png}
-    \includegraphics[width=1\columnwidth]{figures/prelim_studies/ffto_gui_overview.png}           
+    \includegraphics[width=1\columnwidth]{figures/prelim_studies/GUI/GUI_fenestrationClosure.png}           
     \caption{\textbf{
-    A GUI for DT creation from iCMR data and the subsequent \textit{in silico} interventions. 
+    Illustratio of a GUI prototype for Digital Twin creation from iCMR data and the subsequent \textit{in silico} intervention FFTO (Fontan fenestration test occlusion). 
     }
-    \textcolor{red}{Only sub-figures A and D will be there, focusing on the Fontan fenestration (purple); there will be 3 plots :  data; Digital Twin and in silico Fontan fenestration closure. }
     } 
     \label{fig:GUI}
     \vspace{-2pt}
 \end{figure}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/figures_gr_page1.pdf}
+    \caption{\textbf{Predicted long-term cardiac \gls*{gr} in left-ventricular pressure overload.} Ventricles are colored by local mass increase from white (0\%) to purple (100\%).\cite{gebauer24}}
+    \label{fig_cardiac_gr}
+    \vspace{-12pt}
+\end{wrapfigure}
+\textbf{Long-term growth and remodeling.} For the long-term counterpart of these short-term predictions, we developed and validated the first \gls*{hcmm} of cardiac \gls*{gr}\cite{gebauer23}, in which organ-scale growth emerges from the deposition and degradation of myocyte and collagen constituents driven by the deviation of their stress from a homeostatic set-point. From a single set of equations, the model reproduces both stable growth that returns to homeostasis and unstable, runaway dilation, and it captures the reversal of growth once the load is relieved, reproducing reference constrained-mixture behavior at a fraction of the computational cost\cite{gebauer23}. Adaptive integration of the history variables makes patient-specific simulation over months of physiological time practical\cite{gebauer24}, illustrated by the predicted \gls*{gr} of a left ventricle under pressure overload in Figure~\ref{fig_cardiac_gr}. Aim 3 initializes this model from each child's pre-recruitment DT.
 
 
 Based on our preliminary trials, we will describe how our current research aims will be pursued. 
@@ -297,17 +309,14 @@ Based on our preliminary trials, we will describe how our current research aims 
 
 The central hypothesis of Aim~1 is that the parameters obtained by incorporating the Digital Twins -- PV loop analysis (internal and external work; arterial elastance) and the biophysical parameters of myocadial contractility, stiffness and resistance in various parts of the circulatory system -- will better correlate with the successful BiV repair than the values of the EDP and EDV.  
 
-First, we will develop a method of DT-augmented iCMR analysis for the patients with  with borderline-size LV and double-outlet right ventricle (DORV). 
-
-DORV is a complex congenital heart defect in which both
-great arteries -- aorta and the pulmonary trunk -- arise entirely or predominantly from RV (see Figure~\ref{fig:intro_DORV}). This condition has a pooled global birth prevalence of approximately
+First, we will develop a method of DT-augmented iCMR analysis for the patients with  with borderline-size LV and double-outlet right ventricle (DORV).  DORV is a complex congenital heart defect in which both
+great arteries -- aorta and the pulmonary trunk -- arise entirely or predominantly from RV (we recall Figure~\ref{fig:intro_DORV}). This condition has a pooled global birth prevalence of approximately
 1.06 per 10,000 births\cite{liu2019_prevalenceOfCHD}. 
 DORV is a broad spectrum of anatomical phenotypes and may be
 associated with other cardiac malformations\cite{bell2023_DORV}. 
 A ventricular septal defect (VSD) is present
 in most patients and allows for blood from the left ventricle to reach the great vessels. 
-
-While all patients with a borderline-size ventricle considered for a BiV repair represent an inhomogeneous group, the group of patients with DORV is relatively homogeneous. Having currently $>$ 20 retrospective iCMR datasets or patients with DORV prior to BiV repair (with the clinical outcomes post-surgery) and counting with \textasciitilde{}20 new patients with DORV in the complex BiV repair yearly, we will use this group for the initial part of the project, prior to extending the focus on other patients with borderline-size LVs or RVs. 
+While all patients with a borderline-size ventricle considered for a BiV repair represent an inhomogeneous group, the group of patients with DORV is relatively homogeneous. Having currently $>$ \textcolor{red}{20} retrospective iCMR datasets of patients with DORV prior to BiV repair (with the clinical outcomes post-surgery) and counting with \textasciitilde{}\textcolor{red}{20}  new patients with DORV in the complex BiV repair yearly, we will use this group for the initial part of the project, prior to extending the focus on other patients with borderline-size LVs or RVs. 
 %In the final stage of the project, the developed methods will be applied to all new patients undergoing iCMR exam for a planning of BiV repair, prior to their actual complex surgery.
 
 %\begin{figure}%[t!]
@@ -322,7 +331,7 @@ While all patients with a borderline-size ventricle considered for a BiV repair 
 %\end{figure}
 
 \textbf{Sub-aim 1a: Generation of Digital Twins from retrospective data of patients with double-outlet right ventricle -- prototyping phase (Years 1 to 2).} 
-We will employ the biomechanical heart model of a reduced geometry and kinematics\cite{caruel13}. This model was previously used in our clinical research projects\cite{ruijsink20,gall20,gusseva23,gusseva25}. Ventricular geometry and kinematics are reduced to a sphere with inner radius $R$ and wall thickness $d$. %(Figure \ref{fig:schematics}). 
+We will employ the biomechanical heart model of a reduced geometry and kinematics\cite{caruel13}. This model was previously used in our clinical research projects\cite{ruijsink20,legall20,gusseva23,gusseva25}. Ventricular geometry and kinematics are reduced to a sphere with inner radius $R$ and wall thickness $d$. %(Figure \ref{fig:schematics}). 
 Constitutive material laws that provide myocardial passive and active properties are preserved as in the full 3D heart model. In particular, myocardial passive stiffness is given by visco-elastic constitutive law; myocardial contractility is modeled within the A. F. Huxley sliding filament theory framework where mechano-chemical coupling of actin-myosin unit produces an active contraction of the sarcomere\cite{caruel13}. 
 To encompass various cardiovascular configurations in the patients with DORV, the prototyping will be carried out using the Python library PhysioBlocks (distributed as an opensource software under the LGPL license, which incorporates the implementation of the reduced-order model\cite{caruel13}), see 
 \texttt{https://github.com/physioblocks/physioblocks}.
@@ -330,9 +339,9 @@ To encompass various cardiovascular configurations in the patients with DORV, th
 
 This library allows to create a cardiovascular model by assembling pre-defined blocks, such as: actively contracting chamber; inflow and outflow valves (modeled as diodes, which incorporates a possibility of valve stenosis or regurgitation\cite{gusseva21}), or inter-ventricular connection via ventricular septal defect (VSD); periphery circulation by 0D blocks of resistance/capacitance components. % -- within the ``PhysioBlocks Net''.
 %(see example in Figures~\ref{fig:schematics_DORV_circuits} and \ref{fig:schematics}. The overall specific system consisting of a set of Blocks connected via a set of Nodes is called the ``PhysioBlocks Net''. 
-We will pre-define the following vascular circuits and implement as the ``PhysioBlocks Nets''. These Nets will incorporate the majority of the patients with DORV (see Figure~\ref{fig:schematics_DORV_circuits}): 
+We will pre-define the following vascular circuits and implement as the ``PhysioBlocks Nets''. These Nets will incorporate the majority of the patients with DORV: % (see Figure~\ref{fig:schematics_DORV_circuits}): 
 \begin{enumerate}
-\item Ventricular outflow into aorta and main pulmonary artery (MPA), with a pulmonary artery band (previously created, to reduce the risk of developing pulmonary hypertension); the pulmonary band is represented as a forward resistance of the pulmonary valve\cite{gusseva25}.
+\item Ventricular outflow into aorta and main pulmonary artery (MPA), with a pulmonary artery band (put in place to reduce the risk of developing pulmonary hypertension); the pulmonary band is represented as a forward resistance of the pulmonary valve\cite{gusseva25}.
 \item{Ventricular outflow into aorta (with pulmonary artery atresia); Glenn connection (superior vena cava to pulmonary artery junction) allows for partial oxygenation of blood}.
 \item{Previous case, in addition, with developed significant aorto-pulmonary (AP) collaterals.}
 \item{Ventricular outflow into aorta and main pulmonary artery (MPA), with a pulmonary artery band, and with the Glenn connection}.
@@ -353,7 +362,7 @@ We will pre-define the following vascular circuits and implement as the ``Physio
 As for the contracting chambers for the patients with DORV, we will consider two configurations:
 \begin{enumerate}
 \item A single ventricle, incorporating both LV and RV, while neglecting the interventricular septum (adequate for the hearts with a large VSD, which is not restricting the flow between the two ventricles).
-\item RV and a borderline-size LV will be represented by two ventricle blocks, which will be connected via a VSD (with a resistance creating the LV-to-RV pressure difference as observed in the pressure data). This  configuration with an increased complexity will be used for smaller-sized VSDs, restricting the LV-to-RV flow. 
+\item RV and a borderline-size LV will be represented by two ventricle blocks, which will be connected via a VSD (with the resistance creating the LV-to-RV pressure difference as observed in the pressure data). This  configuration with an increased complexity will be used for smaller-sized VSDs, restricting the LV-to-RV flow. 
  \end{enumerate}
 
 %the implementation that will be used in this project.  
@@ -388,16 +397,15 @@ The example patient specific simulations are presented in Figure~\ref{fig:DT_bas
 %The changes of physiology, which can arise during the iCMR procedure,  -- induced, e.g.,  by the need of a vasoactive drug administration -- will provide a limited dataset consisting of the flow in ascending aorta together with the aortic pressure. The baseline model will be adapted using the methods from our previous works related to model-augmented cardiovascular physiology during general anesthesia\cite{legall20} and of automated parameter estimation (sequential data assimilation into the biomechanical model using Kalman-like filtering)\cite{chabiniok12}. 
 
 \textbf{Modeling outcomes augmenting the iCMR data}
-The Digital Twin will act as ``biophysical filter'', which will reduce the uncertainty in the iCMR data\cite{gusseva23,gusseva25} and provide additional quantities of clinical interest, not directly visible in the data. Namely, the iCMR data analysis will be augmented by:  ventricular pressure-volume (PV) loops of a high quality\cite{gusseva25} and internal/external work;  ventricular elastance\cite{legall19}; myocardial stiffness and the actual value of contractility and resistances in the circuit\cite{ruijsink20,gall20}.
+The Digital Twin will act as ``biophysical filter'', which will reduce the uncertainty in the iCMR data\cite{gusseva23,gusseva25} and provide additional quantities of clinical interest, not directly visible in the data. Namely, the iCMR data analysis will be augmented by:  ventricular pressure-volume (PV) loops of a high quality\cite{gusseva25} and internal/external work;  ventricular elastance\cite{legall19}; myocardial stiffness and the actual value of contractility and resistances in the circuit\cite{ruijsink20,legall20}.
 
-The automated adjustment of the model to the patient-specific regime and the sensitivity analysis to input data  will incorporate machine learning methods\cite{skardova_Heliyon2026} (providing an initial guess of the patient-specific parameters) and the Kalman-like filtering\cite{chabiniok12} that we previously used in the connection with a complex cardiac biomechanical model.
-
+The automated adjustment of the model to the patient-specific regime will incorporate machine learning methods\cite{skardova2026_Heliyon} (providing an initial guess of the patient-specific parameters) and the Kalman-like filtering\cite{chabiniok12} that we previously used in the connection with a complex cardiac biomechanical model. The recent work\cite{kimmig_FIMH2025} presents the sensitivity analysis of the same cardiac model to input data in the context of ICU monitoring; the method will be adapted to the problem of using iCMR data. 
 
 \textbf{Sub-aim 1b: DT-augmented iCMR platform (Years 1 to 2)}
-While the PhysioBlocks library is suitable for prototyping and testing, it would be difficult to upscale it to the routine clinical use (and operate by a non-modeling experts). Therefore, a customized software will be implemented in parallel by the Twynova med-tech company. 
+While the PhysioBlocks library is suitable for prototyping and testing tasks, it would be difficult to upscale it to the routine clinical use (and operate it by a non-modeling experts). Therefore, a customized software will be implemented in parallel by the Twynova med-tech company. 
 This ``DT-augmented iCMR platform'' -- while embedding the models defined in Sub-aim 1a --   will be  suited to the direct operation by medical doctors in the iCMR suit.
 
-The experience of the Twynova team with providing solutions for the ICU and general anesthesia setups (continuous waveforms of pressure and cardiac output, real time adapting the predefined Digital Twins\cite{kimmig_FIMH2025}) will allow for a technical solution incorporating the specific data output of iCMR (discrete values characterizing the anatomy of the ventricles, and pressure and flow waveforms). The fast engine (the expected acceleration factor is around 10, in comparison to the Python-based PhysioBlocks prototyping), will be suitable for the full automation of Digital Twin generation during the iCMR procedure.
+The experience of Twynova with providing solutions for the ICU and general anesthesia setups (continuous waveforms of pressure and cardiac output, real time adapting the predefined Digital Twins\cite{kimmig_FIMH2025}) will allow for a technical solution incorporating the specific data output of iCMR (discrete values characterizing the anatomy of the ventricles, and pressure and flow waveforms). The fast engine (the expected acceleration factor is around 10, in comparison to the Python-based PhysioBlocks prototyping), will be suitable for the full automation of Digital Twin generation during the iCMR procedure.
 The product will contain a graphical user interface, which will allow the clinical experts to select the pre-defined models (given by the configuration of the heart and circulation) and their modification according to the individual patients, while providing the on-the-fly Digital-Twin-data augmentation.
 
 
@@ -408,16 +416,15 @@ We plan that in Years 4-5, the pre-surgery iCMR exam will be DT-augmented  in al
 
 \textbf{\textcolor{black}{Expected results: } }
 %The results of Sub-aim 1a will be be a base for the d
-Sub-aim 1a will introduce the novel ingredients for decision making to the communities of pediatric cardiothoracic surgery and cardiology (while exemplifying on the hearts with DORV and a borderline-size LV), and Sub-aim 3 will demonstrate that the method is can be generalized to the whole cohort of patients considered for the complex BiV repair (with the potential for any complex intervention planning). The DT-augmented iCMR platform will be essential in establishing the pipeline for including all newly incoming patients in Years 4-5, which will be crucial when incorporating DTs in the planning of complex surgeries.  The DT-augmentation of multi-modality data analysis will provide a deep (patho-)physiological insights into the the question, why some hearts have the capacity to grow and / or sustain circulation, and why some hearts tend to fail under such loading. Therefore, we expect methodological (Digital Twinning) and technological (automated platform of DT-augmented clinical data analysis) results, as well as physiological and clinical results.
+Sub-aim 1a will introduce the novel ingredients for decision making to the communities of pediatric cardiothoracic surgery and cardiology (while exemplifying on the hearts with DORV and a borderline-size LV), and Sub-aim 3 will demonstrate that the method can be generalized to the whole cohort of patients considered for the complex BiV repair (with the potential for any complex intervention planning). The DT-augmented iCMR platform (Sub-aim~2) will be essential in establishing the pipeline for including all newly incoming patients in Years 4-5. %, which will be crucial when incorporating DTs in the planning of complex surgeries.  
+The DT-augmentation of multi-modality data analysis will provide a deep (patho-)physiological insights into the the question, why some hearts have the capacity to grow and / or sustain circulation, and why some hearts tend to fail under such loading. Therefore, we expect methodological (Digital Twinning) and technological (automated platform of DT-augmented clinical data analysis), as well as physiological and clinical results.
+
+\textbf{\textcolor{red}{Major Risks / Pitfalls and Alternate Strategies}}
 
 \subsubsection{Aim 2: Predict the short-term physiology after biventricular repair}
 The Digital Twins of patients undergoing BiV repair created in Aim~1 -- augmenting the data analysis at the actual time prior to the intervention -- will inform about the resilience and health of the myocardium. This information is assumed to play an important role in the success or BiV conversion. However, the approach is not predicting the actual post-surgery course.  Using the biophysical background of the DTs, they can be followed independently of the data, while providing such predictions.
 
 Specifically, the Digital Twins of patients undergoing BiV repair created in Aim 1 will be modified according to the planned surgery (see example schematics in Figure~\ref{fig:BiV_repair}). The borderline-size ventricle will be connected to the systemic / pulmonary circulation, in the patients with borderline-size left, right ventricle, respectively. We will assume that the flow rate in systemic/pulmonary circulation is unchanged after the repair and that the morphology of the borderline-size ventricle is modified according to the septated ventricle. While the passive myocardial stiffness will be assumed to be unchanged from pre-BiV stage, the contractility (inotropy level), heart rate, ventricular preload (represented by LV EDP) and level of the atrio-ventricular valve insufficiency, will be varied in silico. The predicted non-favorable outcomes from BiV conversion will be defined by predicted heart rate higher than the upper normal range (for patient’s age); ventricular preload above 15 mmHg or need for ventricle contractility above the level prior to BiV conversion. 
-
-Plots in Figure~\ref{fig:BiV_repair} demonstrate such {\it in silico} predictions when varying the LV preload, chronotropic and inotropic effects in a patient with DORV (Digital Twin at baseline depicted in Figure~\ref{fig:DT_baseline}). The results in this particular patient  suggest a more complicated post-surgery course. 
-%Figure\ref{fig:DORV4} displays a predicted favorable post-surgery course.  
-A result of pilot study with 6 patients with DORV is tabulated in Figure~\ref{fig:BiV_table}. 
 
 \begin{figure}%[t!]
     \centering
@@ -430,15 +437,18 @@ A result of pilot study with 6 patients with DORV is tabulated in Figure~\ref{fi
     \begin{minipage}{0.3\textwidth}
          \includegraphics[width=1\columnwidth]{figures/simulations/DORV/test2_valve_repair.jpg}\\
           \includegraphics[width=1\columnwidth]{figures/simulations/DORV/test3_heart_rate.jpg}
-    \end{minipage}
-   
+    \end{minipage}   
     %\includegraphics[width=0.49\columnwidth]{figures/simulations/DORV/test4_contractility.jpg}
-    \caption{\textbf{{In silico} biventricular repair (left ventricular septation and connection with the systemic circulation) and example predictions of the function of the ventricle (right).
+    \caption{\textbf{{In silico} biventricular repair (left ventricular septation and connection with the systemic circulation) and example predictions of the function of the ventricle post-repair (right).
     }} 
     \label{fig:BiV_repair}
     \vspace{-2pt}
 \end{figure}
 
+
+Plots in Figure~\ref{fig:BiV_repair} demonstrate such {\it in silico} predictions when varying the LV preload and chronotropic effects in a patient with DORV (for whom the Digital Twin at baseline was depicted in Figure~\ref{fig:DT_baseline}). The results in this particular patient  suggest a more complicated post-surgery course. 
+%Figure\ref{fig:DORV4} displays a predicted favorable post-surgery course.  
+A result of pilot study with 6 patients with DORV is tabulated in Figure~\ref{fig:BiV_table}. 
 
 
 As for the patients with borderline-size RV, additionally to the BiV repair (septated LV and RV, as previously delineated), we will also consider the so-called ``1.5-ventricle repair'' (smaller RV receiving venous return from the inferior body, while the upper body-venous return is connected to pulmonary arteries via the Glenn connection).  Simulating both scenarios {\it in silico} will bring a deeper insight into these two strategies allowing for hypotheses generations (used in future studies); the scenario corresponding to the actual surgery will serve for validating the predictive post-surgery risk. 
@@ -481,22 +491,25 @@ As for the patients with borderline-size RV, additionally to the BiV repair (sep
 %    \vspace{-2pt}
 %\end{figure}
 
-\textbf{Hypothesis:} The predicted non-favorable outcome (as defined above) will correlate with some indicators of the immediate clinical course during the post-surgery hospital stay (among which, we will use left atrial pressure in the first 48 hours; heart rate; inotrope requirement; end-organ dysfunction reflective of low cardiac output (BUN/Cr, LFTs, UOP); other hospital complications or re-interventions; ICU Length of Stay; Hospital Length of Stay).
+\textbf{Hypothesis:} 
+\textcolor{red}{
+The predicted non-favorable outcome (as defined above) will correlate with some indicators of the immediate clinical course during the post-surgery hospital stay (among which, we will use left atrial pressure in the first 48 hours; heart rate; inotrope requirement; end-organ dysfunction reflective of low cardiac output (BUN/Cr, LFTs, UOP); other hospital complications or re-interventions; ICU Length of Stay; Hospital Length of Stay).
+}
 
-\textbf{Expected results:} 
+\textbf{\textcolor{red}{Expected results:}} 
 
 \textbf{Major Risks / Pitfalls and Alternate Strategies}
 Our preliminary simulations with datasets of 6 patients with DORV demonstrates that the reduced-geometry model provides a valuable insight into the cardiovascular physiology of individual patients. However, we are aware that the actual heart is not spherical in shape and the LV/RV myocardium are known to have different properties. 
 
 While the pilot study with 6 patients with DORV used a spherical model combining both LV and RV, we will implement two spherical models within the PhysioBlocks library and their connection via a ventricular septal defect (VSD).  This was described as a part of Sub-aim 1a for the patients with a restrictive VSD. This strategy will be tested also for the patients with non-restrictive VSD, as the myocardium of LV and RV are intrinsically different.  If this strategy provides an advantage in the prototyping phase, the finalized DT-augmented iCMR platform will be entirely based on this more complex model.  
 
-Even if implementing a combination of 0D heart chambers,
-there will not be a direct interaction between the two ventricles (via the septum). After the BiV repair, we rather expect the risk of the smaller ventricle failure; the increased loading pressure in the borderline-size ventricle could lead to a volume decrease of the other ventricle (via the septum bulging), which would be rather modes, however. Nevertheless, if such a direct LV-RV interaction via the septum turns out to be of a functional importance, we will consider addressing it via the recently reported approach\cite{nguyen_FIMH2025}. 
+Even if implementing a combination of 0D heart chambers (described above),
+there will not be a direct interaction between the two ventricles (via the septum). After the BiV repair, we rather expect the risk of the smaller ventricle failure; the increased loading pressure in the borderline-size ventricle could lead to a volume decrease of the other ventricle (via the septum bulging), which would be rather modest, however. Nevertheless, if such a direct LV-RV interaction via the septum turns out to be of a functional importance, we will consider addressing it, e.g., via the recently reported approach\cite{nguyen_FIMH2025}. 
 
-There is a limited risk in recruiting a sufficient number of patients with DORV within the BiV repair program. However, having already $>$70 datasets available in total and including $>$20 cases with DORV (from the Complex BiV repair program at UT Southwestern), and the current pace of around 30 new patients annually, this risk is relatively modest. 
-Independently of this project, we aim to collaborate with other centers performing BiV repair -- such as Boston Children’s as in our recent joint works\cite{gusseva23,gusseva25a}; Duke (with active collaboration of the Dr. Andersen (Director of the Complex BiV Repair program at UT Southwestern, Dallas and Co-Investigator of this project) and Dr. Turek (Duke)); and other centers. Creating such a network will be invaluable, particularly in the next step of extending the work to the multi-center study. 
+There is a limited risk in recruiting a sufficient number of patients with DORV within the BiV repair program. However, having already $>$\textcolor{red}{70} datasets available in total and including $>$\textcolor{red}{20} cases with DORV (from the Complex BiV repair program at UT Southwestern), and the current pace of around \textcolor{red}{30} new patients annually, this risk is relatively modest. 
+Independently of this project, we aim to collaborate with other centers performing BiV repair -- such as Boston Children’s as in our recent joint works\cite{gusseva23,gusseva25a}; Duke (with active collaboration of  Dr. Andersen (Director of the Complex BiV Repair program at UT Southwestern, Dallas and Co-Investigator of this project) and Dr. Turek (Duke)); and other centers. Creating such a network will be invaluable, particularly in the next step of extending the work to the multi-center study. 
 
-Within this grant proposal, we intend to recruit a postdoctoral researcher with a rather specific skill set. If the recruitment was delayed (and while actively seeking for such a candidate), the project will be advanced directly by the PI and graduate students of the Biomedical Engineering Graduate School of the UT Southwestern Medical Center Dallas, who will contribute to selected subtasks (advanced image data analysis and to the creation of pre-BiV conversion Digital Twins). 
+%Within this grant proposal, we intend to recruit a postdoctoral researcher with a rather specific skill set. If the recruitment was delayed (and while actively seeking for such a candidate), the project will be advanced directly by the PI and graduate students of the Biomedical Engineering Graduate School of the UT Southwestern Medical Center Dallas, who will contribute to selected subtasks (advanced image data analysis and to the creation of pre-BiV conversion Digital Twins). 
 
 
 %will consider three levels of increasing the complexity: 1) Implementation of two spherical models within the PhysioBlocks library and their connection via a ventricular septal defect (VSD). 
@@ -513,16 +526,16 @@ In this project we will evaluate model behavior in individual patients, for all 
 
 \subsubsection{Aim 3: Predict the long-term growth of the recruited ventricle}
 
+\begin{wrapfigure}{r}{0.38\textwidth}
+    \centering
+    \includegraphics[width=0.38\textwidth]{figures/figures_gr_page2.pdf}
+    \caption{\textbf{Feedback loop in our cardiac growth model.}}
+    \label{fig_cardiac_gr_loop}
+    \vspace{-12pt}
+\end{wrapfigure}
 \textbf{Rationale.} Ventricular recruitment deliberately overloads a borderline ventricle, by redirecting more inflow through its \gls*{av} valve and repairing a leaking \gls*{av} valve in a case-specific combination planned by the surgeon, to induce growth toward a size that can sustain a \gls*{biv} circulation. Whether a given ventricle will grow enough is currently unpredictable: it is judged only retrospectively at the post-recruitment \gls*{icmr} exam 8 to 15 months later, which is used to decide whether the heart can be septated (\gls*{biv} repair) or whether the child must instead proceed to single-ventricle palliation (Glenn, then Fontan). A ventricle that fails to grow has thus undergone recruitment surgery that, in the end, offered no benefit before the child enters the Fontan pathway anyway. \bfit{The clinically actionable target is therefore to predict, before recruitment, the risk of insufficient growth}, so that a child who would not benefit can be spared futile recruitment stages. Unlike the short-term re-adjustment predicted in Aim 2, this growth is a slow, load-driven adaptation of the myocardial tissue, mediated by the deposition and degradation of constituents in response to altered mechanical stimuli, that cannot be read from a pre-surgery snapshot. \bfit{Working hypothesis:} mechanically driven constituent turnover governs post-recruitment growth, so a constrained mixture model initialized from the pre-recruitment \gls*{dt} predicts insufficient growth more accurately than the size and pressure criteria used today.
 
-\begin{wrapfigure}{r}{0.4\textwidth}
-    \centering
-    \includegraphics[width=0.4\textwidth]{figures/figures_gr_page1.pdf}
-    \caption{\textbf{Predicted long-term cardiac \gls*{gr} in left-ventricular pressure overload.} Ventricles are colored by local mass increase from white (0\%) to purple (100\%). Adapted from Gebauer et al.\cite{gebauer24}}
-    \label{fig_cardiac_gr}
-    \vspace{-6pt}
-\end{wrapfigure}
-\textbf{Feasibility and rigor of prior research.} The choice of model class is central to feasibility. Cardiac \gls*{gr} has most often been modeled with kinematic growth theory\cite{rodriguez94}, which prescribes the direction and extent of growth through an inelastic growth tensor. Such models have reproduced athlete's heart, ventricular dilation, and wall thickening\cite{goktepe10}, eccentric and concentric hypertrophy through sarcomerogenesis\cite{goktepe10}, heart failure\cite{costabal19,peirlinck19}, and acute myocardial infarction\cite{saez15}. They capture the shape and mass changes of \gls*{gr} efficiently, but they do not model why growth occurs: the extent and direction are prescribed rather than emerging from tissue turnover, growth is decoupled from cell-scale constituent production and removal, and the reversal of growth after a load is relieved is not captured\cite{gebauer23}. Predicting whether and when a borderline ventricle grows therefore requires a mechanistic model. The constrained mixture theory\cite{humphrey02a} tracks the production and removal of individual constituents within stressed configurations, so growth emerges from the mechanobiological processes observed in living tissue. Because its classical form must retain all past constituent configurations it is costly. The \gls*{hcmm}\cite{cyron16,braeu16} removes this cost by temporally homogenizing constituent deposition, making organ-scale \gls*{gr} tractable, with the growth of each constituent $i$ driven by the deviation of its fiber stress $\sigma^i$ from a homeostatic set-point $\sigma^i_h$ at a rate set by a gain parameter $k^i_\sigma$. Both capabilities this aim requires are already in hand by our group: we developed an \gls*{hcmm} of cardiac \gls*{gr} that predicts organ-scale ventricular change from constituent-level turnover and analyzed its mechanobiological stability and reversal, reproducing the reference constrained-mixture behavior at a fraction of the cost\cite{gebauer23}. We made the formulation efficient for organ-scale simulation through adaptive integration of the history variables that otherwise dominate the cost\cite{gebauer24}. These build on the reduced-geometry heart model and PhysioBlocks implementation of Aims 1 and 2\cite{caruel13}, so the growth model shares the \gls*{dt} geometry, kinematics, and constitutive laws. Because Aim 3 operates on \glspl*{dt} constructed offline from stored \gls*{icmr} data, it is independent of the real-time pipeline of Aim 1. As an early go/no-go, in Year 1 we will reproduce a single retrospective paired case (pre- and post-recruitment \gls*{icmr}) end to end before scaling to the cohort.
+\textbf{Feasibility and rigor of prior research.} The choice of model class is central to feasibility. Kinematic growth models\cite{rodriguez94,goktepe10} prescribe the direction and extent of growth and therefore cannot decide whether a borderline ventricle will grow enough. Predicting growth requires a mechanistic model in which growth emerges from constituent turnover\cite{humphrey02a,cyron16,braeu16} (Fig.~\ref{fig_cardiac_gr_loop}). Both capabilities this aim requires are in hand and validated, as summarized in the Preliminary Data (Figure~\ref{fig_cardiac_gr}): our \gls*{hcmm} of cardiac \gls*{gr} predicts organ-scale ventricular change from constituent-level turnover\cite{gebauer23}, and its adaptive integration makes months-long, patient-specific simulation efficient\cite{gebauer24}. The growth model builds on the reduced-geometry heart model and PhysioBlocks implementation of Aims 1 and 2\cite{caruel13}, so it shares the \gls*{dt} geometry, kinematics, and constitutive laws. Because Aim 3 operates on \glspl*{dt} constructed offline from stored \gls*{icmr} data, it is independent of the real-time pipeline of Aim 1. As an early go/no-go, in Year 1 we will reproduce a single retrospective paired case (pre- and post-recruitment \gls*{icmr}) end to end before scaling to the cohort.
 
 \textbf{Sub-aim 3a: Formulate and calibrate a patient-specific constrained mixture model of the recruited ventricle (Years 1 to 3).} We will extend the 0D spherical reduced-geometry ventricle of Aim 1 into an \gls*{hcmm} in which the myocardial wall is a mixture of a contractile myocyte constituent and a passive collagen and extracellular-matrix constituent, each with its own mass fraction, homeostatic stress, and turnover kinetics. Each patient's model will be initialized from the pre-recruitment \gls*{dt} (Aim 1), which synthesizes the \gls*{icmr} dataset: ventricular geometry (inner radius $R$ and wall thickness $d$ from cine-MRI end-diastolic and end-systolic volumes and myocardial mass), loading from the pressure-catheter waveforms (ventricular, atrial or wedge, and great-vessel pressures) and large-vessel flows (cardiac output and \gls*{av}-valve forward and reverse flow), and the homeostatic wall-stress set-point implied by the calibrated pre-recruitment equilibrium, imposed as the baseline about which growth is driven. Parameters that \gls*{icmr} constrains (geometry, loading, and baseline wall stress) will be patient-specific; constituent turnover rates, gain parameters $k^i_\sigma$, and mass fractions that cannot be measured in vivo will be set from our established cardiac priors\cite{gebauer23} and the constrained-mixture literature. The implementation will be verified against the published cardiac benchmark cases\cite{arostica25} and checked for mesh and step-size convergence before any patient application.
 
@@ -821,7 +834,7 @@ The design of study is retrospective and the results do not change the clinical 
 %       REFERENCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \clearpage
-\section*{\normalsize{REFERENCES CITED \textnormal{(\textbf{PIs}, \underline{Collaborators})}}}
+\section*{\normalsize{REFERENCES CITED \textnormal{(\textbf{Senior Personnel}, \underline{Collaborators})}}}
 \bibliographystyle{mrp}
 \bibliography{martin_highlighted,references}
 \end{document}
