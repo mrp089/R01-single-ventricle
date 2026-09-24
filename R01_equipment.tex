@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EQUIPMENT -- BiVRepair R01
+%
+% UT Southwestern content from the clinical team, Yale (Pfaller)
+% section added; layout follows the submitted DVA R01 equipment
+% document (site sections with bold block leads).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{definitions}
+\begin{document}
+
+\textbf{\uppercase{Equipment -- UT Southwestern Medical Center}}
+
+\textbf{Pediatric Cardiac MRI Laboratory (PCMRI).} The PCMRI Laboratory, located within Children's Health and part of UT Southwestern Biomedical Engineering, includes all core equipment needed for the data acquisitions of this study. A Philips Ingenia 1.5~T MRI scanner is fully dedicated to cardiac MRI. It is equipped with appropriate hemodynamic monitoring systems, catheter visualization systems, communication systems adapted for MRI, 12-lead filtered ECG readouts adapted for magnetic interference, and safety systems for transfer to the conventional X-ray catheterization suite. The adaptation of this laboratory allows \gls*{icmr}, i.e., combined catheterization and MRI procedures, making it one of only a few pediatric facilities actively providing this for patients in the US. Dr. Hussain (Co-I of this proposal) is the Director of this laboratory. The post-processing workstations allow for the visualization and processing of anonymized image datasets, including the extraction of ventricular volumes and large-vessel flow quantification.
+
+\textbf{Cardiac Modeling team computing.} The Cardiac Modeling team, embedded within the PCMRI Laboratory and led by the PI, has the computational resources required for the project: the reduced-order models of Aims~1 and~2 request only standard multi-CPU machines.
+
+\textbf{Catheterization laboratory.} Dr. Reddy (Co-I) is the Director of the catheterization laboratory, with the infrastructure, expertise, and equipment to perform the \gls*{icmr} studies.
+
+\textbf{\uppercase{Equipment -- Yale University}}
+
+Dr. Pfaller's laboratory in Dunham Laboratory at Yale University is equipped with multiple high-performance workstations and dual-monitor setups for model development, data analysis, and simulation-code development. The laboratory has full network access to \gls*{ycrc} shared resources, which provide the compute infrastructure for the growth simulations of Aim~3.
+
+\textbf{Cardiovascular simulation software.} The laboratory develops and maintains SimVascular and its multi-physics finite element solver svMultiPhysics, the validated open-source platform hosting the homogenized constrained mixture model of cardiac growth and remodeling applied in Aim~3; Dr. Pfaller is a core developer of both. The patient-specific growth simulations, their calibration pipeline, and the leave-one-out validation framework proposed in Aim~3 are developed and maintained in this laboratory.
+
+\textbf{Grace CPU and Bouchet GPU clusters (\gls*{ycrc}).} The Grace cluster provides approximately 26,000 cores for general-purpose computing. The Bouchet cluster provides 88 nodes, each with 64 cores and 1~TB of RAM, plus 80 NVIDIA H200 GPUs and 48 NVIDIA RTX 5000 ADA GPUs. These clusters support the principal computational workloads of Aim~3: the forward integration of each patient-specific constrained mixture model over the 8--15 month growth horizon, the cohort-level calibration of turnover and gain parameters under leave-one-out cross-validation, and the sensitivity analyses over gain parameters and homeostatic set-points.
+
+\textbf{Research storage (\gls*{ycrc}).} Multi-terabyte allocation for active research data, including the de-identified physiologic datasets and Digital Twin parameters received from the primary site under the Data Use Agreement, model configurations, and simulation outputs, with mirrored backup managed by \gls*{ycrc}.
+
+\end{document}
